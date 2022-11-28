@@ -1,2 +1,0 @@
-1;Perro;SI
-2;Gato;SI
