@@ -19,6 +19,19 @@ namespace TiendaMascota_v2.Vista
 {
     public partial class Inicio2 : Form
     {
+        private static Producto filtro = new Producto();
+        private List<Producto> Productos_Completo = new List<Producto>();
+        private List<Producto> Productos_Filtrado = new List<Producto>();
+        private List<Producto> Productos_Paginados = new List<Producto>();
+
+        private List<Venta> Ventas_Completas = new List<Venta>();
+        private List<Venta> Ventas_Paginadas = new List<Venta>();
+
+        private static int current = 0;
+        private static int paginador = 10;
+        private static int total = 0;
+        private static int last_pag = 0;
+        private static int current_pag = 1;
         public Inicio2()
         {
             InitializeComponent();
@@ -27,10 +40,13 @@ namespace TiendaMascota_v2.Vista
 
         private void Inicio2_Load(object sender, EventArgs e)
         {
+            InicializarNombreUsuario();
+            InicializarComponentes();
             InicializarGrillaProductos();
             InicializarGrillaCategorias();
             InicializarGrillaAnimales();
             InicializarGrillaVentas();
+            
 
             this.lblErrorClickEditar.Visible = false;
             this.lblErrorClickEditarCat.Visible = false;
@@ -41,10 +57,16 @@ namespace TiendaMascota_v2.Vista
             if (InicioControlador.UsuarioLogueado.Admin)
             {
                 InicializarGrillaUsuarios();
+                btnEliminarUsuario.Show();
+                btnEditarUsuario.Show();
+                btnAgregarUsuario.Show();
             }
             else
             {
                 this.lblSinPermisos.Visible = true;
+                btnEliminarUsuario.Hide();
+                btnEditarUsuario.Hide();
+                btnAgregarUsuario.Hide();
             }
 
 
@@ -93,11 +115,10 @@ namespace TiendaMascota_v2.Vista
                 fila["Categoria"] = CategoriaControlador.ObtenerCategoriaPorId(item.IdCategoria).Nombre;
                 fila["Animal"] = AnimalControlador.ObtenerAnimalPorId(item.IdAnimal).Nombre;
 
-                //var imageConverter = new ImageConverter();
-                //Bitmap img;
+                var imageConverter = new ImageConverter();
+                Bitmap img;
                 //img = new Bitmap(@"D:\Documents\GitHub\TiendaMascota_v3\bin\Debug\imagenes\" + item.RutaImagen + ".jpg");
                 //fila["Imagen"] = imageConverter.ConvertTo(img, System.Type.GetType("System.Byte[]"));
-
                 fila["Activo"] = Producto.EsActivo(item.Activo);
 
                 
@@ -404,8 +425,244 @@ namespace TiendaMascota_v2.Vista
         }
 
 
+
         #endregion
 
+        private void InicializarComponentes()
+        {
+            Paginar(Productos_Completo);
+            llenarBoxPaginacion();
+        }
 
+        private void Paginar(List<Producto> prodMostrar)
+        {
+            Productos_Paginados = prodMostrar.Skip(current).Take(paginador).ToList();
+            ProductoControlador.ObtenerProductosPaginado(Productos_Paginados);
+            label_paginacion.Text = "Mostrando " + (current + 1) + " - " + (current + paginador) + "de " + total;
+
+
+            if (current_pag == 1)
+            {
+                btn_FirstPage.Hide();
+                btn_prev_page.Hide();
+
+            }
+            else
+            {
+                btn_FirstPage.Show();
+                btn_FirstPage.Text = "1";
+                btn_prev_page.Show();
+                btn_prev_page.Text = (current_pag - 1).ToString();
+            }
+
+            if (current_pag == last_pag)
+            {
+                btn_last_page.Hide();
+                btn_next_page.Hide();
+            }
+            else
+            {
+                btn_last_page.Show();
+                btn_next_page.Show();
+            }
+
+            if (btn_FirstPage.Text == btn_prev_page.Text)
+            {
+                btn_FirstPage.Hide();
+            }
+
+            if (btn_last_page.Text == btn_next_page.Text)
+            {
+                btn_last_page.Hide();
+            }
+
+            btn_next_page.Text = (current_pag + 1).ToString();
+            btn_prev_page.Text = (current_pag - 1).ToString();
+            btn_actual_page.Text = (current_pag).ToString();
+
+        }
+
+        private void btn_next_page_Click(object sender, EventArgs e)
+        {
+            current = current + paginador;
+            current_pag = (current_pag + 1);
+            btn_actual_page.Text = current_pag.ToString();
+            Paginar(Productos_Filtrado);
+        }
+
+        private void btn_last_page_Click(object sender, EventArgs e)
+        {
+            current = last_pag + paginador;
+            current_pag = last_pag;
+            btn_actual_page.Text = current_pag.ToString();
+            Paginar(Productos_Filtrado);
+        }
+
+        private void btn_prev_page_Click(object sender, EventArgs e)
+        {
+            current = current - paginador;
+            current_pag = (current_pag - 1);
+            btn_actual_page.Text = current_pag.ToString();
+
+            Paginar(Productos_Filtrado);
+        }
+
+        private void btn_FirstPage_Click(object sender, EventArgs e)
+        {
+            current = 0;
+            current_pag = 1;
+            Paginar(Productos_Filtrado);
+            btn_actual_page.Text = current_pag.ToString();
+        }
+
+        private void VaciarFiltros_Click(object sender, EventArgs e)
+        {
+            boxCategorias.SelectedItem = null;
+            filtroNombre.Text = null;
+            comboBox2.Text = null;
+
+            filtro.Nombre = null;
+            filtro.IdCategoria = 0;
+
+            lblCat.Text = "Categoria";
+
+            Productos_Filtrado = Productos_Completo;
+
+            Paginar(Productos_Completo);
+            btn_last_page.Show();
+            btn_next_page.Show();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedItem != null)
+            {
+                filtro.Activo = bool.Parse(comboBox2.Text);
+                filtrar();
+            }
+        }
+
+        private void boxCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (boxCategorias.SelectedItem != null)
+            {
+                Categoria seleccionado = CategoriaControlador.ObtenerCategoriaPorNombre(boxCategorias.SelectedItem.ToString());
+                //filtro.IdCategoria = CategoriaControlador.ObtenerCategoriaPorId(seleccionado);
+                lblCat.Text = seleccionado.Nombre;
+                filtrar();
+            }
+
+        }
+
+        private void filtroNombre_TextChanged(object sender, EventArgs e)
+        {
+            string nombreFiltrar = filtroNombre.Text.ToString().ToLower();
+
+            if (string.IsNullOrEmpty(filtroNombre.Text))
+            {
+                filtro.Nombre = null;
+            }
+            else
+            {
+                filtro.Nombre = nombreFiltrar;
+                filtrar();
+            }
+        }
+
+        private void boxPaginacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            paginador = int.Parse(boxPaginacion.SelectedItem.ToString());
+            current = 0;
+            last_pag = (total / paginador) + 1;
+            Paginar(Productos_Filtrado);
+        }
+
+        private void filtrar()
+        {
+
+            if (filtro.Nombre != null)
+            {
+                Productos_Filtrado = Productos_Completo.Where(x => x.Nombre.ToLower().Contains(filtro.Nombre)).ToList();
+                vaciarCombos();
+                llenarCombos();
+
+            }
+
+            if (filtro.IdCategoria != 0)
+            {
+                Productos_Filtrado = Productos_Filtrado.Where(x => x.IdCategoria == filtro.IdCategoria).ToList();
+
+            }
+
+
+            if (filtro.Activo != false)
+            {
+                Productos_Filtrado = Productos_Filtrado.Where(x => x.Activo == filtro.Activo).ToList();
+            }
+
+            total = Productos_Filtrado.Count();
+            last_pag = (total / paginador) + 1;
+            current = 0;
+            current_pag = 1;
+
+            Paginar(Productos_Filtrado);
+
+        }
+        private void llenarCombos()
+        {
+            List<Categoria> listCat = new List<Categoria>();
+            listCat = CategoriaControlador.ObtenerCategorias().ToList();
+            llenarBoxCategorias(listCat);
+
+            llenarBoxPaginacion();
+            llenarBoxEstado();
+        }
+        private void llenarBoxCategorias(List<Categoria> listaCategorias)
+        {
+            foreach (Categoria cat in listaCategorias)
+            {
+                if (cat.Activo == true)
+                {
+                    boxCategorias.Items.Add(cat.Nombre);
+                }
+            }
+        }
+        private void vaciarCombos()
+        {
+            boxCategorias.Items.Clear();
+        }
+        private void llenarBoxEstado()
+        {
+            comboBox2.Items.Add("SI");
+            comboBox2.Items.Add("NO");
+        }
+        private void llenarBoxPaginacion()
+        {
+            boxPaginacion.Items.Add("10");
+            boxPaginacion.Items.Add("20");
+            boxPaginacion.Items.Add("30");
+            boxPaginacion.Items.Add("40");
+            boxPaginacion.SelectedItem = "10";
+        }
+
+        private void Disconnect_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+            login.Show();
+        }
+
+        private void InicializarNombreUsuario()
+        {
+            nombre_usuario.Text = InicioControlador.UsuarioLogueado.Nombre;
+            nombre_usuario.Show();
+        }
+
+        private void InicializarConexion()
+        {
+            // Nos va a mostrar si la conexion a la base de datos es valida o esta desconectado
+            // Conexion.Text = 
+            // Conexion.show();
+        }
     }
 }

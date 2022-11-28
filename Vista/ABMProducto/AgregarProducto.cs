@@ -40,7 +40,7 @@ namespace TiendaMascota_v2.Vista
                 Stock = int.Parse(txtStock.Text),
                 IdCategoria = CategoriaControlador.ObtenerCategoriaPorNombre(comboCategoria.Text).Id,
                 IdAnimal = AnimalControlador.ObtenerAnimalPorNombre(comboAnimales.Text).Id,
-                RutaImagen = txtRutaImagen.Text,
+                RutaImagen = int.Parse(txtRutaImagen.Text),
                 Activo = Producto.EsActivo(comboActivo.Text)
             };
 

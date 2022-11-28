@@ -39,7 +39,7 @@ namespace TiendaMascota_v2.Vista.ABMProducto
             txtStock.Text = producto.Stock.ToString();
             comboAnimales.SelectedIndex = comboAnimales.FindString(AnimalControlador.ObtenerAnimalPorId(producto.IdAnimal).Nombre);
             comboCategorias.SelectedIndex = comboCategorias.FindStringExact(CategoriaControlador.ObtenerCategoriaPorId(producto.IdCategoria).Nombre);
-            txtRutaImagen.Text = producto.RutaImagen;
+            txtRutaImagen.Text = producto.RutaImagen.ToString();
             if (producto.Activo)
             {
                 this.comboActivo.SelectedItem = this.comboActivo.Items[0];
@@ -79,7 +79,7 @@ namespace TiendaMascota_v2.Vista.ABMProducto
                 Stock = int.Parse(txtStock.Text),
                 IdCategoria = CategoriaControlador.ObtenerCategoriaPorNombre(comboCategorias.Text).Id,
                 IdAnimal = AnimalControlador.ObtenerAnimalPorNombre(comboAnimales.Text).Id,
-                RutaImagen = txtRutaImagen.Text,
+                RutaImagen = int.Parse(txtRutaImagen.Text),
                 Activo = Categoria.EsActivo(comboActivo.Text)
             };
 

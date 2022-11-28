@@ -13,7 +13,7 @@ namespace TiendaMascota_v2.Modelo
         public int Precio;
         public int IdCategoria;
         public int IdAnimal;
-        public string RutaImagen;
+        public int RutaImagen;
         public int Stock;
         public bool Activo;
 
@@ -29,7 +29,7 @@ namespace TiendaMascota_v2.Modelo
             this.Stock = int.Parse(lineaProducto[3]);
             this.IdCategoria = int.Parse(lineaProducto[4]);
             this.IdAnimal = int.Parse(lineaProducto[5]);
-            this.RutaImagen = lineaProducto[6];
+            this.RutaImagen = int.Parse(lineaProducto[6]);
             this.Activo = EsActivo(lineaProducto[7]);
         }
 

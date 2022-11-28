@@ -38,6 +38,11 @@ namespace TiendaMascota_v2.Controlador
         {
             return ProductoRepositorio.ObtenerProductos();
         }
+        public static List<Producto> ObtenerProductosPaginado(List<Producto> paginado)
+        {
+            return ProductoRepositorio.ObtenerProductos();
+        }
+        
         public static int ObtenerUltimoId()
         {
             return ProductoRepositorio.UltimoId;

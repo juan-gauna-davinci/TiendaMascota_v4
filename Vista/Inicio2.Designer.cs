@@ -50,6 +50,20 @@
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.grillaCategorias = new System.Windows.Forms.DataGridView();
             this.tabPageProductos = new System.Windows.Forms.TabPage();
+            this.btn_FirstPage = new System.Windows.Forms.Button();
+            this.btn_last_page = new System.Windows.Forms.Button();
+            this.btn_prev_page = new System.Windows.Forms.Button();
+            this.btn_next_page = new System.Windows.Forms.Button();
+            this.btn_actual_page = new System.Windows.Forms.Button();
+            this.boxPaginacion = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label_paginacion = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblCat = new System.Windows.Forms.Label();
+            this.filtroNombre = new System.Windows.Forms.TextBox();
+            this.VaciarFiltros = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.boxCategorias = new System.Windows.Forms.ComboBox();
             this.lblErrorClickEditar = new System.Windows.Forms.Label();
             this.btnEditarProducto = new System.Windows.Forms.Button();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
@@ -60,11 +74,12 @@
             this.btnAgregarVenta = new System.Windows.Forms.Button();
             this.grillaVentas = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Conexion = new System.Windows.Forms.Label();
             this.imagen_usuario = new System.Windows.Forms.PictureBox();
             this.nombre_usuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Petshop = new System.Windows.Forms.Label();
-            this.Conexion = new System.Windows.Forms.Label();
+            this.Disconnect = new System.Windows.Forms.Button();
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaUsuarios)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -83,7 +98,7 @@
             // 
             // salir
             // 
-            this.salir.Location = new System.Drawing.Point(12, 544);
+            this.salir.Location = new System.Drawing.Point(12, 651);
             this.salir.Name = "salir";
             this.salir.Size = new System.Drawing.Size(75, 23);
             this.salir.TabIndex = 5;
@@ -102,7 +117,7 @@
             this.tabUsuarios.Location = new System.Drawing.Point(4, 22);
             this.tabUsuarios.Name = "tabUsuarios";
             this.tabUsuarios.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUsuarios.Size = new System.Drawing.Size(768, 369);
+            this.tabUsuarios.Size = new System.Drawing.Size(896, 479);
             this.tabUsuarios.TabIndex = 4;
             this.tabUsuarios.Text = "Usuarios";
             this.tabUsuarios.UseVisualStyleBackColor = true;
@@ -112,7 +127,7 @@
             this.lblSinPermisos.AutoSize = true;
             this.lblSinPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSinPermisos.ForeColor = System.Drawing.Color.Red;
-            this.lblSinPermisos.Location = new System.Drawing.Point(246, 159);
+            this.lblSinPermisos.Location = new System.Drawing.Point(306, 217);
             this.lblSinPermisos.Name = "lblSinPermisos";
             this.lblSinPermisos.Size = new System.Drawing.Size(312, 16);
             this.lblSinPermisos.TabIndex = 18;
@@ -123,7 +138,7 @@
             this.lblErrorClickEditarUsuario.AutoSize = true;
             this.lblErrorClickEditarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorClickEditarUsuario.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorClickEditarUsuario.Location = new System.Drawing.Point(6, 339);
+            this.lblErrorClickEditarUsuario.Location = new System.Drawing.Point(7, 371);
             this.lblErrorClickEditarUsuario.Name = "lblErrorClickEditarUsuario";
             this.lblErrorClickEditarUsuario.Size = new System.Drawing.Size(247, 16);
             this.lblErrorClickEditarUsuario.TabIndex = 17;
@@ -131,7 +146,7 @@
             // 
             // btnEditarUsuario
             // 
-            this.btnEditarUsuario.Location = new System.Drawing.Point(578, 336);
+            this.btnEditarUsuario.Location = new System.Drawing.Point(713, 386);
             this.btnEditarUsuario.Name = "btnEditarUsuario";
             this.btnEditarUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnEditarUsuario.TabIndex = 14;
@@ -142,14 +157,14 @@
             // grillaUsuarios
             // 
             this.grillaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaUsuarios.Location = new System.Drawing.Point(6, 6);
+            this.grillaUsuarios.Location = new System.Drawing.Point(3, 59);
             this.grillaUsuarios.Name = "grillaUsuarios";
-            this.grillaUsuarios.Size = new System.Drawing.Size(756, 324);
+            this.grillaUsuarios.Size = new System.Drawing.Size(890, 309);
             this.grillaUsuarios.TabIndex = 13;
             // 
             // btnEliminarUsuario
             // 
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(460, 336);
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(632, 386);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
             this.btnEliminarUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarUsuario.TabIndex = 12;
@@ -159,7 +174,7 @@
             // 
             // btnAgregarUsuario
             // 
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(687, 336);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(794, 386);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarUsuario.TabIndex = 11;
@@ -177,7 +192,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 369);
+            this.tabPage1.Size = new System.Drawing.Size(896, 479);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Animales";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -187,7 +202,7 @@
             this.lblErrorClickEditarAnimal.AutoSize = true;
             this.lblErrorClickEditarAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorClickEditarAnimal.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorClickEditarAnimal.Location = new System.Drawing.Point(6, 336);
+            this.lblErrorClickEditarAnimal.Location = new System.Drawing.Point(7, 371);
             this.lblErrorClickEditarAnimal.Name = "lblErrorClickEditarAnimal";
             this.lblErrorClickEditarAnimal.Size = new System.Drawing.Size(247, 16);
             this.lblErrorClickEditarAnimal.TabIndex = 16;
@@ -195,9 +210,9 @@
             // 
             // btnEditarAnimal
             // 
-            this.btnEditarAnimal.Location = new System.Drawing.Point(556, 336);
+            this.btnEditarAnimal.Location = new System.Drawing.Point(713, 386);
             this.btnEditarAnimal.Name = "btnEditarAnimal";
-            this.btnEditarAnimal.Size = new System.Drawing.Size(87, 23);
+            this.btnEditarAnimal.Size = new System.Drawing.Size(75, 23);
             this.btnEditarAnimal.TabIndex = 11;
             this.btnEditarAnimal.Text = "Editar";
             this.btnEditarAnimal.UseVisualStyleBackColor = true;
@@ -205,9 +220,9 @@
             // 
             // btnEliminarAnimal
             // 
-            this.btnEliminarAnimal.Location = new System.Drawing.Point(435, 336);
+            this.btnEliminarAnimal.Location = new System.Drawing.Point(632, 386);
             this.btnEliminarAnimal.Name = "btnEliminarAnimal";
-            this.btnEliminarAnimal.Size = new System.Drawing.Size(87, 23);
+            this.btnEliminarAnimal.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarAnimal.TabIndex = 9;
             this.btnEliminarAnimal.Text = "Eliminar";
             this.btnEliminarAnimal.UseVisualStyleBackColor = true;
@@ -216,16 +231,16 @@
             // grillaAnimales
             // 
             this.grillaAnimales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaAnimales.Location = new System.Drawing.Point(6, 6);
+            this.grillaAnimales.Location = new System.Drawing.Point(3, 59);
             this.grillaAnimales.Name = "grillaAnimales";
-            this.grillaAnimales.Size = new System.Drawing.Size(756, 314);
+            this.grillaAnimales.Size = new System.Drawing.Size(890, 309);
             this.grillaAnimales.TabIndex = 7;
             // 
             // btnAgregarAnimal
             // 
-            this.btnAgregarAnimal.Location = new System.Drawing.Point(675, 336);
+            this.btnAgregarAnimal.Location = new System.Drawing.Point(794, 386);
             this.btnAgregarAnimal.Name = "btnAgregarAnimal";
-            this.btnAgregarAnimal.Size = new System.Drawing.Size(87, 23);
+            this.btnAgregarAnimal.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarAnimal.TabIndex = 6;
             this.btnAgregarAnimal.Text = "Agregar";
             this.btnAgregarAnimal.UseVisualStyleBackColor = true;
@@ -241,7 +256,7 @@
             this.tabPageCategorias.Location = new System.Drawing.Point(4, 22);
             this.tabPageCategorias.Name = "tabPageCategorias";
             this.tabPageCategorias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCategorias.Size = new System.Drawing.Size(768, 369);
+            this.tabPageCategorias.Size = new System.Drawing.Size(896, 479);
             this.tabPageCategorias.TabIndex = 1;
             this.tabPageCategorias.Text = "Categorias";
             this.tabPageCategorias.UseVisualStyleBackColor = true;
@@ -251,7 +266,7 @@
             this.lblErrorClickEditarCat.AutoSize = true;
             this.lblErrorClickEditarCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorClickEditarCat.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorClickEditarCat.Location = new System.Drawing.Point(15, 326);
+            this.lblErrorClickEditarCat.Location = new System.Drawing.Point(7, 371);
             this.lblErrorClickEditarCat.Name = "lblErrorClickEditarCat";
             this.lblErrorClickEditarCat.Size = new System.Drawing.Size(247, 16);
             this.lblErrorClickEditarCat.TabIndex = 14;
@@ -259,7 +274,7 @@
             // 
             // btnEditarCategoria
             // 
-            this.btnEditarCategoria.Location = new System.Drawing.Point(590, 336);
+            this.btnEditarCategoria.Location = new System.Drawing.Point(713, 386);
             this.btnEditarCategoria.Name = "btnEditarCategoria";
             this.btnEditarCategoria.Size = new System.Drawing.Size(75, 23);
             this.btnEditarCategoria.TabIndex = 8;
@@ -269,7 +284,7 @@
             // 
             // btnEliminarCategoria
             // 
-            this.btnEliminarCategoria.Location = new System.Drawing.Point(483, 336);
+            this.btnEliminarCategoria.Location = new System.Drawing.Point(632, 386);
             this.btnEliminarCategoria.Name = "btnEliminarCategoria";
             this.btnEliminarCategoria.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarCategoria.TabIndex = 7;
@@ -279,7 +294,7 @@
             // 
             // btnAgregarCategoria
             // 
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(687, 336);
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(794, 386);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
             this.btnAgregarCategoria.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarCategoria.TabIndex = 6;
@@ -290,13 +305,27 @@
             // grillaCategorias
             // 
             this.grillaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaCategorias.Location = new System.Drawing.Point(3, 6);
+            this.grillaCategorias.Location = new System.Drawing.Point(3, 59);
             this.grillaCategorias.Name = "grillaCategorias";
-            this.grillaCategorias.Size = new System.Drawing.Size(756, 308);
+            this.grillaCategorias.Size = new System.Drawing.Size(890, 308);
             this.grillaCategorias.TabIndex = 2;
             // 
             // tabPageProductos
             // 
+            this.tabPageProductos.Controls.Add(this.btn_FirstPage);
+            this.tabPageProductos.Controls.Add(this.btn_last_page);
+            this.tabPageProductos.Controls.Add(this.btn_prev_page);
+            this.tabPageProductos.Controls.Add(this.btn_next_page);
+            this.tabPageProductos.Controls.Add(this.btn_actual_page);
+            this.tabPageProductos.Controls.Add(this.boxPaginacion);
+            this.tabPageProductos.Controls.Add(this.label5);
+            this.tabPageProductos.Controls.Add(this.label_paginacion);
+            this.tabPageProductos.Controls.Add(this.label6);
+            this.tabPageProductos.Controls.Add(this.lblCat);
+            this.tabPageProductos.Controls.Add(this.filtroNombre);
+            this.tabPageProductos.Controls.Add(this.VaciarFiltros);
+            this.tabPageProductos.Controls.Add(this.comboBox2);
+            this.tabPageProductos.Controls.Add(this.boxCategorias);
             this.tabPageProductos.Controls.Add(this.lblErrorClickEditar);
             this.tabPageProductos.Controls.Add(this.btnEditarProducto);
             this.tabPageProductos.Controls.Add(this.btnAgregarProducto);
@@ -305,17 +334,159 @@
             this.tabPageProductos.Location = new System.Drawing.Point(4, 22);
             this.tabPageProductos.Name = "tabPageProductos";
             this.tabPageProductos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProductos.Size = new System.Drawing.Size(768, 369);
+            this.tabPageProductos.Size = new System.Drawing.Size(896, 479);
             this.tabPageProductos.TabIndex = 0;
             this.tabPageProductos.Text = "Productos";
             this.tabPageProductos.UseVisualStyleBackColor = true;
+            // 
+            // btn_FirstPage
+            // 
+            this.btn_FirstPage.Location = new System.Drawing.Point(349, 386);
+            this.btn_FirstPage.Name = "btn_FirstPage";
+            this.btn_FirstPage.Size = new System.Drawing.Size(43, 23);
+            this.btn_FirstPage.TabIndex = 64;
+            this.btn_FirstPage.Text = "<<";
+            this.btn_FirstPage.UseVisualStyleBackColor = true;
+            this.btn_FirstPage.Click += new System.EventHandler(this.btn_FirstPage_Click);
+            // 
+            // btn_last_page
+            // 
+            this.btn_last_page.Location = new System.Drawing.Point(531, 386);
+            this.btn_last_page.Name = "btn_last_page";
+            this.btn_last_page.Size = new System.Drawing.Size(40, 23);
+            this.btn_last_page.TabIndex = 63;
+            this.btn_last_page.Text = ">>";
+            this.btn_last_page.UseVisualStyleBackColor = true;
+            this.btn_last_page.Click += new System.EventHandler(this.btn_last_page_Click);
+            // 
+            // btn_prev_page
+            // 
+            this.btn_prev_page.Location = new System.Drawing.Point(398, 386);
+            this.btn_prev_page.Name = "btn_prev_page";
+            this.btn_prev_page.Size = new System.Drawing.Size(30, 23);
+            this.btn_prev_page.TabIndex = 62;
+            this.btn_prev_page.Text = "<";
+            this.btn_prev_page.UseVisualStyleBackColor = true;
+            this.btn_prev_page.Click += new System.EventHandler(this.btn_prev_page_Click);
+            // 
+            // btn_next_page
+            // 
+            this.btn_next_page.Location = new System.Drawing.Point(495, 386);
+            this.btn_next_page.Name = "btn_next_page";
+            this.btn_next_page.Size = new System.Drawing.Size(27, 23);
+            this.btn_next_page.TabIndex = 61;
+            this.btn_next_page.Text = ">";
+            this.btn_next_page.UseVisualStyleBackColor = true;
+            this.btn_next_page.Click += new System.EventHandler(this.btn_next_page_Click);
+            // 
+            // btn_actual_page
+            // 
+            this.btn_actual_page.Location = new System.Drawing.Point(448, 386);
+            this.btn_actual_page.Name = "btn_actual_page";
+            this.btn_actual_page.Size = new System.Drawing.Size(30, 23);
+            this.btn_actual_page.TabIndex = 60;
+            this.btn_actual_page.UseVisualStyleBackColor = true;
+            // 
+            // boxPaginacion
+            // 
+            this.boxPaginacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxPaginacion.FormattingEnabled = true;
+            this.boxPaginacion.Location = new System.Drawing.Point(87, 431);
+            this.boxPaginacion.Name = "boxPaginacion";
+            this.boxPaginacion.Size = new System.Drawing.Size(37, 21);
+            this.boxPaginacion.TabIndex = 57;
+            this.boxPaginacion.SelectedIndexChanged += new System.EventHandler(this.boxPaginacion_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(7, 431);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 58;
+            this.label5.Text = "Paginación";
+            // 
+            // label_paginacion
+            // 
+            this.label_paginacion.AutoSize = true;
+            this.label_paginacion.BackColor = System.Drawing.Color.White;
+            this.label_paginacion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_paginacion.Location = new System.Drawing.Point(7, 405);
+            this.label_paginacion.Name = "label_paginacion";
+            this.label_paginacion.Size = new System.Drawing.Size(117, 13);
+            this.label_paginacion.TabIndex = 59;
+            this.label_paginacion.Text = "Mostrando 1 - 10 de 40";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(726, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Activo";
+            // 
+            // lblCat
+            // 
+            this.lblCat.AutoSize = true;
+            this.lblCat.ForeColor = System.Drawing.Color.Black;
+            this.lblCat.Location = new System.Drawing.Point(616, 11);
+            this.lblCat.Name = "lblCat";
+            this.lblCat.Size = new System.Drawing.Size(52, 13);
+            this.lblCat.TabIndex = 55;
+            this.lblCat.Text = "Categoria";
+            // 
+            // filtroNombre
+            // 
+            this.filtroNombre.Location = new System.Drawing.Point(487, 28);
+            this.filtroNombre.Name = "filtroNombre";
+            this.filtroNombre.Size = new System.Drawing.Size(84, 20);
+            this.filtroNombre.TabIndex = 54;
+            this.filtroNombre.TextChanged += new System.EventHandler(this.filtroNombre_TextChanged);
+            // 
+            // VaciarFiltros
+            // 
+            this.VaciarFiltros.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.VaciarFiltros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.VaciarFiltros.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.VaciarFiltros.Location = new System.Drawing.Point(807, 29);
+            this.VaciarFiltros.Name = "VaciarFiltros";
+            this.VaciarFiltros.Size = new System.Drawing.Size(83, 23);
+            this.VaciarFiltros.TabIndex = 53;
+            this.VaciarFiltros.Text = "reiniciar filtros";
+            this.VaciarFiltros.UseVisualStyleBackColor = false;
+            this.VaciarFiltros.Click += new System.EventHandler(this.VaciarFiltros_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(703, 29);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(84, 21);
+            this.comboBox2.TabIndex = 52;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // boxCategorias
+            // 
+            this.boxCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxCategorias.FormattingEnabled = true;
+            this.boxCategorias.Location = new System.Drawing.Point(598, 28);
+            this.boxCategorias.Name = "boxCategorias";
+            this.boxCategorias.Size = new System.Drawing.Size(84, 21);
+            this.boxCategorias.TabIndex = 51;
+            this.boxCategorias.SelectedIndexChanged += new System.EventHandler(this.boxCategorias_SelectedIndexChanged);
             // 
             // lblErrorClickEditar
             // 
             this.lblErrorClickEditar.AutoSize = true;
             this.lblErrorClickEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorClickEditar.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorClickEditar.Location = new System.Drawing.Point(7, 322);
+            this.lblErrorClickEditar.Location = new System.Drawing.Point(7, 371);
             this.lblErrorClickEditar.Name = "lblErrorClickEditar";
             this.lblErrorClickEditar.Size = new System.Drawing.Size(247, 16);
             this.lblErrorClickEditar.TabIndex = 13;
@@ -323,7 +494,7 @@
             // 
             // btnEditarProducto
             // 
-            this.btnEditarProducto.Location = new System.Drawing.Point(587, 336);
+            this.btnEditarProducto.Location = new System.Drawing.Point(713, 386);
             this.btnEditarProducto.Name = "btnEditarProducto";
             this.btnEditarProducto.Size = new System.Drawing.Size(75, 23);
             this.btnEditarProducto.TabIndex = 12;
@@ -333,7 +504,7 @@
             // 
             // btnAgregarProducto
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(685, 336);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(794, 386);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarProducto.TabIndex = 11;
@@ -343,7 +514,7 @@
             // 
             // btnEliminarProducto
             // 
-            this.btnEliminarProducto.Location = new System.Drawing.Point(482, 336);
+            this.btnEliminarProducto.Location = new System.Drawing.Point(632, 386);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarProducto.TabIndex = 10;
@@ -354,9 +525,9 @@
             // grillaProductos
             // 
             this.grillaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaProductos.Location = new System.Drawing.Point(6, 6);
+            this.grillaProductos.Location = new System.Drawing.Point(3, 59);
             this.grillaProductos.Name = "grillaProductos";
-            this.grillaProductos.Size = new System.Drawing.Size(756, 309);
+            this.grillaProductos.Size = new System.Drawing.Size(890, 309);
             this.grillaProductos.TabIndex = 3;
             // 
             // tabVentas
@@ -369,7 +540,7 @@
             this.tabVentas.Location = new System.Drawing.Point(76, 117);
             this.tabVentas.Name = "tabVentas";
             this.tabVentas.SelectedIndex = 0;
-            this.tabVentas.Size = new System.Drawing.Size(776, 395);
+            this.tabVentas.Size = new System.Drawing.Size(904, 505);
             this.tabVentas.TabIndex = 0;
             // 
             // tabPage3
@@ -379,14 +550,14 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(768, 369);
+            this.tabPage3.Size = new System.Drawing.Size(896, 479);
             this.tabPage3.TabIndex = 5;
             this.tabPage3.Text = "Ventas";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnAgregarVenta
             // 
-            this.btnAgregarVenta.Location = new System.Drawing.Point(687, 336);
+            this.btnAgregarVenta.Location = new System.Drawing.Point(794, 386);
             this.btnAgregarVenta.Name = "btnAgregarVenta";
             this.btnAgregarVenta.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarVenta.TabIndex = 15;
@@ -397,9 +568,9 @@
             // grillaVentas
             // 
             this.grillaVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaVentas.Location = new System.Drawing.Point(6, 6);
+            this.grillaVentas.Location = new System.Drawing.Point(3, 59);
             this.grillaVentas.Name = "grillaVentas";
-            this.grillaVentas.Size = new System.Drawing.Size(756, 324);
+            this.grillaVentas.Size = new System.Drawing.Size(890, 309);
             this.grillaVentas.TabIndex = 14;
             // 
             // panel1
@@ -413,13 +584,23 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(943, 96);
+            this.panel1.Size = new System.Drawing.Size(1103, 96);
             this.panel1.TabIndex = 6;
+            // 
+            // Conexion
+            // 
+            this.Conexion.AutoSize = true;
+            this.Conexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Conexion.Location = new System.Drawing.Point(869, 55);
+            this.Conexion.Name = "Conexion";
+            this.Conexion.Size = new System.Drawing.Size(115, 29);
+            this.Conexion.TabIndex = 4;
+            this.Conexion.Text = "Conexion";
             // 
             // imagen_usuario
             // 
             this.imagen_usuario.Image = ((System.Drawing.Image)(resources.GetObject("imagen_usuario.Image")));
-            this.imagen_usuario.Location = new System.Drawing.Point(860, 18);
+            this.imagen_usuario.Location = new System.Drawing.Point(1016, 19);
             this.imagen_usuario.Name = "imagen_usuario";
             this.imagen_usuario.Size = new System.Drawing.Size(71, 65);
             this.imagen_usuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -429,10 +610,10 @@
             // nombre_usuario
             // 
             this.nombre_usuario.AutoSize = true;
-            this.nombre_usuario.Font = new System.Drawing.Font("Caladea", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre_usuario.Location = new System.Drawing.Point(755, 27);
+            this.nombre_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre_usuario.Location = new System.Drawing.Point(869, 27);
             this.nombre_usuario.Name = "nombre_usuario";
-            this.nombre_usuario.Size = new System.Drawing.Size(93, 28);
+            this.nombre_usuario.Size = new System.Drawing.Size(101, 29);
             this.nombre_usuario.TabIndex = 2;
             this.nombre_usuario.Text = "Nombre";
             // 
@@ -449,29 +630,30 @@
             // Petshop
             // 
             this.Petshop.AutoSize = true;
-            this.Petshop.Font = new System.Drawing.Font("Caladea", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Petshop.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Petshop.Location = new System.Drawing.Point(102, 27);
             this.Petshop.Name = "Petshop";
-            this.Petshop.Size = new System.Drawing.Size(146, 43);
+            this.Petshop.Size = new System.Drawing.Size(162, 42);
             this.Petshop.TabIndex = 0;
             this.Petshop.Text = "PetShop";
             // 
-            // Conexion
+            // Disconnect
             // 
-            this.Conexion.AutoSize = true;
-            this.Conexion.Font = new System.Drawing.Font("Caladea", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Conexion.Location = new System.Drawing.Point(755, 55);
-            this.Conexion.Name = "Conexion";
-            this.Conexion.Size = new System.Drawing.Size(104, 28);
-            this.Conexion.TabIndex = 4;
-            this.Conexion.Text = "Conexion";
+            this.Disconnect.Location = new System.Drawing.Point(1016, 102);
+            this.Disconnect.Name = "Disconnect";
+            this.Disconnect.Size = new System.Drawing.Size(75, 23);
+            this.Disconnect.TabIndex = 8;
+            this.Disconnect.Text = "Disconnect";
+            this.Disconnect.UseVisualStyleBackColor = true;
+            this.Disconnect.Click += new System.EventHandler(this.Disconnect_Click);
             // 
             // Inicio2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(943, 579);
+            this.ClientSize = new System.Drawing.Size(1103, 686);
+            this.Controls.Add(this.Disconnect);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.salir);
             this.Controls.Add(this.tabVentas);
@@ -539,5 +721,20 @@
         private System.Windows.Forms.PictureBox imagen_usuario;
         private System.Windows.Forms.Label nombre_usuario;
         private System.Windows.Forms.Label Conexion;
+        private System.Windows.Forms.Button btn_FirstPage;
+        private System.Windows.Forms.Button btn_last_page;
+        private System.Windows.Forms.Button btn_prev_page;
+        private System.Windows.Forms.Button btn_next_page;
+        private System.Windows.Forms.Button btn_actual_page;
+        private System.Windows.Forms.ComboBox boxPaginacion;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_paginacion;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblCat;
+        private System.Windows.Forms.TextBox filtroNombre;
+        private System.Windows.Forms.Button VaciarFiltros;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox boxCategorias;
+        private System.Windows.Forms.Button Disconnect;
     }
 }
