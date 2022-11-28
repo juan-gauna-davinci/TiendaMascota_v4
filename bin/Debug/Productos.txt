@@ -1,0 +1,56 @@
+1;Alimento Vital Can Senior 3KG;1645;62;1;1;Alimento-Vital-Can-Senior-3KG;SI
+2;Alimento Vital Can Cachorro 3KG;1800;55;1;1;Alimento-Vital-Can-Cachorro-3KG;SI
+3;Alimento Royal Canin Senior 3KG;1710;55;1;1;Alimento-Royal-Canin-Senior-3KG;SI
+4;Alimento Royal Canin Cachorro 3KG;2000;61;1;1;Alimento-Royal-Canin-Cachorro-3KG;SI
+5;Golosina Pop Twister Palitos;205;95;2;1;Golosina-Pop-Twister-Palitos;SI
+6;Dental Bone;415;95;2;1;Dental-Bone;SI
+7;Huesos Antistress;479;71;2;1;Huesos-Antistress;SI
+8;Alimento Excellent Gato Adulto 1KG;925;61;1;2;Alimento-Excellent-Gato-Adulto-1KG;SI
+9;Alimento ProPlan Adult Cat 1KG;1435;94;1;2;Alimento-ProPlan-Adult-Cat-1KG;SI
+10;Alimento Excellent Sabor Pollo 1KG;925;95;1;2;Alimento-Excellent-Sabor-Pollo-1KG;SI
+11;Alimento Excellent Reduced Calorie 1KG;1065;75;1;2;Alimento-Excellent-Reduced-Calorie-1KG;SI
+12;Golosina Gatitos Cremosos (Atún);425;82;2;2;Golosina-Gatitos-Cremosos-Atún;SI
+13;Golosina Gatitos Cremosos (Pollo);425;84;2;2;Golosina-Gatitos-Cremosos-Pollo;SI
+14;Golosina Gatitos Cremosos (Camarones);425;81;2;2;Golosina-Gatitos-Cremosos-Camarones;SI
+15;Pipeta Antipulgas 1 a 2.8kg;5000;93;3;2;Pipeta-Antipulgas-1;SI
+16;Pipeta Antipulgas 2 a 6.2kg;5300;58;3;2;Pipeta-Antipulgas-2;SI
+17;Crema Cicatrizante Lesión Piel;795;83;3;2;Crema-Cicatrizante-Lesión-Piel;SI
+18;Collar Básico;500;70;4;1;Collar-Básico;SI
+19;Correa 2 metros;500;57;5;1;Correa-2-metros;SI
+20;Correa 5 metros;750;64;5;1;Correa-5-metros;SI
+21;Collar Antipulgas ;6439;75;4;2;Collar-Antipulgas ;SI
+22;Collar Antistress;7999;82;4;2;Collar-Antistress;SI
+23;Pretal Arnes Para Gatos;1299;64;5;2;Pretal-Arnes-Gatos;SI
+24;Cepillo Perro Pelo Corto;5269;88;6;1;Cepillo-Pelo-Corto;SI
+25;Cepillo Perro Pelo Largo;5255;99;6;1;Cepillo-Pelo-Largo;SI
+26;Peine Sacanudos;1869;59;6;1;Peine-Sacanudos;SI
+27;Shampoo Control Olores Maskota;455;75;7;1;Shampoo-Maskota;SI
+28;Shampoo Dermapet;755;93;7;1;Shampoo-Dermapet;SI
+29;Paños Pañales Entrenamiento Perros x100;10925;89;8;1;Paños-Pañales-Perros-x100;SI
+30;Paños Pañales Entrenamiento Perros x30;5369;56;8;1;Paños-Pañales-Perros-x30;SI
+31;Paños Pañales Entrenamiento Perros x50;7233;59;8;1;Paños-Pañales-Perros-x50;SI
+32;Kit Pelo Largo Gatos;3535;56;7;2;Kit-Gatos;SI
+33;Arena Aglomerante Gatos;829;72;9;2;Arena-Aglomerante-Gatos;SI
+34;Hierba Gatera;275;100;9;2;Hierba-Gatera;SI
+35;Piedras 7kg;3359;57;9;2;Piedras-Gatos;SI
+36;Litera Bandeja Sanitaria  Baño;2450;61;9;2;Litera-Baño;SI
+37;Litera Bandeja Sanitaria Baño Cerrada;3699;88;9;2;Litera-Baño-Cerrada;SI
+38;Shampoo Control Olores Maskota;455;94;7;2;Shampoo-Maskota;SI
+39;Cama 61x46 cm;7045;73;10;1;Cama-Perro;SI
+40;Cama 53x43 cm;6119;67;10;1;Cama-Perro;SI
+41;Cucha Termica Large;15315;78;11;1;Cucha-Termica-Large;SI
+42;Cucha Termica Xsmall;7229;85;11;1;Cucha-Termica-Xsmall;SI
+43;Cama 61x46 cm;7045;82;10;2;Cama-gato;SI
+44;Cama 53x43 cm;6119;64;10;2;Cama-gato;SI
+45;Juguete Hueso Masticable;799;84;12;1;Juguete-Hueso;SI
+46;Juguete Masticable Ganso de Tela;799;56;12;1;Juguete-Ganso;SI
+47;Juguete Peluche Conejo Resistente;2699;92;12;1;Juguete-Conejo;SI
+48;Juguete Pelota Dispensa Golosinas;5069;87;12;1;Juguete-Pelota;SI
+49;Juguete Soga Antistress;1189;80;12;1;Juguete-Soga;SI
+50;Juguete Soga Pelota ;3385;99;12;1;Juguete-Soga-Pelota;SI
+51;Frisbee Disco;1189;95;12;1;Juguete-Frisbee;SI
+52;Juguete Gatos Felpa Antistress;395;74;12;2;Juguete-Felpa;SI
+53;Juguete Interactivo Laser;3680;96;12;2;Juguete-Laser;SI
+54;Arbol Torre Juego Felpa;25350;84;12;2;Torre-Juego-Felpa;SI
+55;Rascador Torre 35 x 35;8000;82;12;2;Rascador-Torre-1;SI
+56;Rascador Torre 35 x 65;12650;67;12;2;Rascador-Torre-2;SI
