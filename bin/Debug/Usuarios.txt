@@ -1,0 +1,2 @@
+1;Admin;email@gmail.com;Olazabal 12321;admin;admin;SI;SI
+2;vendedor;vendedor@gmail.com;vendedorcasa;vendedor;vendedor;SI;NO

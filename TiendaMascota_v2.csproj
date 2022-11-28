@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{56DB416D-E987-4EF9-AFCF-5F28054D6373}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TiendaMascota_v2</RootNamespace>
+    <AssemblyName>TiendaMascota_v2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controlador\VentaControlador.cs" />
+    <Compile Include="Controlador\UsuarioControlador.cs" />
+    <Compile Include="Controlador\CategoriaControlador.cs" />
+    <Compile Include="Controlador\InicioControlador.cs" />
+    <Compile Include="Controlador\AnimalControlador.cs" />
+    <Compile Include="Controlador\ProductoControlador.cs" />
+    <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Modelo\Venta.cs" />
+    <Compile Include="Repositorio\UsuarioRepositorio.cs" />
+    <Compile Include="Repositorio\CategoriaRepositorio.cs" />
+    <Compile Include="Repositorio\AnimalRepositorio.cs" />
+    <Compile Include="Repositorio\ProductoRepositorio.cs" />
+    <Compile Include="Modelo\Animal.cs" />
+    <Compile Include="Modelo\Categoria.cs" />
+    <Compile Include="Modelo\Producto.cs" />
+    <Compile Include="Repositorio\VentaRepositorio.cs" />
+    <Compile Include="Vista\ABMAnimal\AgregarAnimal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMAnimal\AgregarAnimal.Designer.cs">
+      <DependentUpon>AgregarAnimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMAnimal\EditarAnimal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMAnimal\EditarAnimal.Designer.cs">
+      <DependentUpon>EditarAnimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMAnimal\EliminarAnimal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMAnimal\EliminarAnimal.Designer.cs">
+      <DependentUpon>EliminarAnimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMAnimal\VerAnimales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMAnimal\VerAnimales.Designer.cs">
+      <DependentUpon>VerAnimales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMCategoria\AgregarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMCategoria\AgregarCategoria.Designer.cs">
+      <DependentUpon>AgregarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMCategoria\EditarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMCategoria\EditarCategoria.Designer.cs">
+      <DependentUpon>EditarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMCategoria\EliminarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMCategoria\EliminarCategoria.Designer.cs">
+      <DependentUpon>EliminarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMCategoria\VerCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMCategoria\VerCategorias.Designer.cs">
+      <DependentUpon>VerCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMProducto\AgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMProducto\AgregarProducto.Designer.cs">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMProducto\EditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMProducto\EditarProducto.Designer.cs">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMProducto\EliminarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMProducto\EliminarProducto.Designer.cs">
+      <DependentUpon>EliminarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMUsuario\AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMUsuario\AgregarUsuario.Designer.cs">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMUsuario\EliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMUsuario\EliminarUsuario.Designer.cs">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMUsuario\EditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMUsuario\EditarUsuario.Designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ABMUsuario\VerUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ABMUsuario\VerUsuarios.Designer.cs">
+      <DependentUpon>VerUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AVenta\AgregarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\AVenta\AgregarVenta.Designer.cs">
+      <DependentUpon>AgregarVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\Inicio2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio2.Designer.cs">
+      <DependentUpon>Inicio2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vista\ABMAnimal\AgregarAnimal.resx">
+      <DependentUpon>AgregarAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMAnimal\EditarAnimal.resx">
+      <DependentUpon>EditarAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMAnimal\EliminarAnimal.resx">
+      <DependentUpon>EliminarAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMAnimal\VerAnimales.resx">
+      <DependentUpon>VerAnimales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMCategoria\AgregarCategoria.resx">
+      <DependentUpon>AgregarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMCategoria\EditarCategoria.resx">
+      <DependentUpon>EditarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMCategoria\EliminarCategoria.resx">
+      <DependentUpon>EliminarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMCategoria\VerCategorias.resx">
+      <DependentUpon>VerCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMProducto\AgregarProducto.resx">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMProducto\EditarProducto.resx">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMProducto\EliminarProducto.resx">
+      <DependentUpon>EliminarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMUsuario\AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMUsuario\EditarUsuario.resx">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMUsuario\EliminarUsuario.resx">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ABMUsuario\VerUsuarios.resx">
+      <DependentUpon>VerUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AVenta\AgregarVenta.resx">
+      <DependentUpon>AgregarVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vista\Inicio2.resx">
+      <DependentUpon>Inicio2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
