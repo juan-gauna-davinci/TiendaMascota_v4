@@ -46,14 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\EmpleadoControlador.cs" />
+    <Compile Include="Controlador\ClienteControlador.cs" />
+    <Compile Include="Controlador\ProveedorControlador.cs" />
     <Compile Include="Controlador\VentaControlador.cs" />
     <Compile Include="Controlador\UsuarioControlador.cs" />
     <Compile Include="Controlador\CategoriaControlador.cs" />
     <Compile Include="Controlador\InicioControlador.cs" />
     <Compile Include="Controlador\AnimalControlador.cs" />
     <Compile Include="Controlador\ProductoControlador.cs" />
+    <Compile Include="Modelo\Empleado.cs" />
+    <Compile Include="Modelo\Cliente.cs" />
+    <Compile Include="Modelo\Proveedor.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Modelo\Venta.cs" />
+    <Compile Include="Repositorio\ClienteRepositorio.cs" />
+    <Compile Include="Repositorio\ProveedorRepositorio.cs" />
+    <Compile Include="Repositorio\EmpleadoRepositorio.cs" />
     <Compile Include="Repositorio\UsuarioRepositorio.cs" />
     <Compile Include="Repositorio\CategoriaRepositorio.cs" />
     <Compile Include="Repositorio\AnimalRepositorio.cs" />
@@ -152,6 +161,60 @@
     <Compile Include="Vista\ABMUsuario\VerUsuarios.Designer.cs">
       <DependentUpon>VerUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\AMBCliente\AgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\AMBCliente\AgregarCliente.Designer.cs">
+      <DependentUpon>AgregarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AMBCliente\EditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\AMBCliente\EditarCliente.Designer.cs">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AMBCliente\EliminarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\AMBCliente\EliminarCliente.Designer.cs">
+      <DependentUpon>EliminarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AMBEmpleado\AgregarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\AMBEmpleado\AgregarEmpleado.Designer.cs">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AMBEmpleado\EditarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\AMBEmpleado\EditarEmpleado.Designer.cs">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AMBEmpleado\EliminarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\AMBEmpleado\EliminarEmpleado.Designer.cs">
+      <DependentUpon>EliminarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AMBProveedor\AgregarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\AMBProveedor\AgregarProveedor.Designer.cs">
+      <DependentUpon>AgregarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AMBProveedor\EditarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\AMBProveedor\EditarProveedor.Designer.cs">
+      <DependentUpon>EditarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AMBProveedor\EliminarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\AMBProveedor\EliminarProveedor.Designer.cs">
+      <DependentUpon>EliminarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\AVenta\AgregarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +285,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\ABMUsuario\VerUsuarios.resx">
       <DependentUpon>VerUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AMBCliente\AgregarCliente.resx">
+      <DependentUpon>AgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AMBCliente\EditarCliente.resx">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AMBCliente\EliminarCliente.resx">
+      <DependentUpon>EliminarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AMBEmpleado\AgregarEmpleado.resx">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AMBEmpleado\EditarEmpleado.resx">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AMBEmpleado\EliminarEmpleado.resx">
+      <DependentUpon>EliminarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AMBProveedor\AgregarProveedor.resx">
+      <DependentUpon>AgregarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AMBProveedor\EditarProveedor.resx">
+      <DependentUpon>EditarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AMBProveedor\EliminarProveedor.resx">
+      <DependentUpon>EliminarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\AVenta\AgregarVenta.resx">
       <DependentUpon>AgregarVenta.cs</DependentUpon>
