@@ -69,10 +69,22 @@
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.grillaProductos = new System.Windows.Forms.DataGridView();
-            this.tabVentas = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabGeneral = new System.Windows.Forms.TabControl();
+            this.tabVentas = new System.Windows.Forms.TabPage();
+            this.btnEditarVenta = new System.Windows.Forms.Button();
+            this.btnEliminarVenta = new System.Windows.Forms.Button();
             this.btnAgregarVenta = new System.Windows.Forms.Button();
             this.grillaVentas = new System.Windows.Forms.DataGridView();
+            this.tabClientes = new System.Windows.Forms.TabPage();
+            this.grillaClientes = new System.Windows.Forms.DataGridView();
+            this.btnEditarCliente = new System.Windows.Forms.Button();
+            this.btnAgregarCliente = new System.Windows.Forms.Button();
+            this.btnEliminarCliente = new System.Windows.Forms.Button();
+            this.tabProveedores = new System.Windows.Forms.TabPage();
+            this.grillaProveedores = new System.Windows.Forms.DataGridView();
+            this.btnEditarProveedor = new System.Windows.Forms.Button();
+            this.btnAgregarProveedor = new System.Windows.Forms.Button();
+            this.btnEliminarProveedor = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Conexion = new System.Windows.Forms.Label();
             this.imagen_usuario = new System.Windows.Forms.PictureBox();
@@ -80,6 +92,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Petshop = new System.Windows.Forms.Label();
             this.Disconnect = new System.Windows.Forms.Button();
+            this.lblErrorClickEditarVenta = new System.Windows.Forms.Label();
+            this.lblErrorClickEditarCliente = new System.Windows.Forms.Label();
+            this.lblErrorClickEditarProv = new System.Windows.Forms.Label();
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaUsuarios)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -88,9 +103,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.grillaCategorias)).BeginInit();
             this.tabPageProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaProductos)).BeginInit();
+            this.tabGeneral.SuspendLayout();
             this.tabVentas.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaVentas)).BeginInit();
+            this.tabClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaClientes)).BeginInit();
+            this.tabProveedores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaProveedores)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagen_usuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -530,30 +549,55 @@
             this.grillaProductos.Size = new System.Drawing.Size(890, 309);
             this.grillaProductos.TabIndex = 3;
             // 
+            // tabGeneral
+            // 
+            this.tabGeneral.Controls.Add(this.tabPageProductos);
+            this.tabGeneral.Controls.Add(this.tabPageCategorias);
+            this.tabGeneral.Controls.Add(this.tabPage1);
+            this.tabGeneral.Controls.Add(this.tabUsuarios);
+            this.tabGeneral.Controls.Add(this.tabVentas);
+            this.tabGeneral.Controls.Add(this.tabClientes);
+            this.tabGeneral.Controls.Add(this.tabProveedores);
+            this.tabGeneral.Location = new System.Drawing.Point(76, 117);
+            this.tabGeneral.Name = "tabGeneral";
+            this.tabGeneral.SelectedIndex = 0;
+            this.tabGeneral.Size = new System.Drawing.Size(904, 505);
+            this.tabGeneral.TabIndex = 0;
+            // 
             // tabVentas
             // 
-            this.tabVentas.Controls.Add(this.tabPageProductos);
-            this.tabVentas.Controls.Add(this.tabPageCategorias);
-            this.tabVentas.Controls.Add(this.tabPage1);
-            this.tabVentas.Controls.Add(this.tabUsuarios);
-            this.tabVentas.Controls.Add(this.tabPage3);
-            this.tabVentas.Location = new System.Drawing.Point(76, 117);
+            this.tabVentas.Controls.Add(this.lblErrorClickEditarVenta);
+            this.tabVentas.Controls.Add(this.btnEditarVenta);
+            this.tabVentas.Controls.Add(this.btnEliminarVenta);
+            this.tabVentas.Controls.Add(this.btnAgregarVenta);
+            this.tabVentas.Controls.Add(this.grillaVentas);
+            this.tabVentas.Location = new System.Drawing.Point(4, 22);
             this.tabVentas.Name = "tabVentas";
-            this.tabVentas.SelectedIndex = 0;
-            this.tabVentas.Size = new System.Drawing.Size(904, 505);
-            this.tabVentas.TabIndex = 0;
+            this.tabVentas.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVentas.Size = new System.Drawing.Size(896, 479);
+            this.tabVentas.TabIndex = 5;
+            this.tabVentas.Text = "Ventas";
+            this.tabVentas.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // btnEditarVenta
             // 
-            this.tabPage3.Controls.Add(this.btnAgregarVenta);
-            this.tabPage3.Controls.Add(this.grillaVentas);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(896, 479);
-            this.tabPage3.TabIndex = 5;
-            this.tabPage3.Text = "Ventas";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.btnEditarVenta.Location = new System.Drawing.Point(713, 386);
+            this.btnEditarVenta.Name = "btnEditarVenta";
+            this.btnEditarVenta.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarVenta.TabIndex = 17;
+            this.btnEditarVenta.Text = "Editar";
+            this.btnEditarVenta.UseVisualStyleBackColor = true;
+            this.btnEditarVenta.Click += new System.EventHandler(this.btnEditarVenta_Click);
+            // 
+            // btnEliminarVenta
+            // 
+            this.btnEliminarVenta.Location = new System.Drawing.Point(632, 386);
+            this.btnEliminarVenta.Name = "btnEliminarVenta";
+            this.btnEliminarVenta.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarVenta.TabIndex = 16;
+            this.btnEliminarVenta.Text = "Eliminar";
+            this.btnEliminarVenta.UseVisualStyleBackColor = true;
+            this.btnEliminarVenta.Click += new System.EventHandler(this.btnEliminarVenta_Click);
             // 
             // btnAgregarVenta
             // 
@@ -572,6 +616,106 @@
             this.grillaVentas.Name = "grillaVentas";
             this.grillaVentas.Size = new System.Drawing.Size(890, 309);
             this.grillaVentas.TabIndex = 14;
+            // 
+            // tabClientes
+            // 
+            this.tabClientes.Controls.Add(this.lblErrorClickEditarCliente);
+            this.tabClientes.Controls.Add(this.grillaClientes);
+            this.tabClientes.Controls.Add(this.btnEditarCliente);
+            this.tabClientes.Controls.Add(this.btnAgregarCliente);
+            this.tabClientes.Controls.Add(this.btnEliminarCliente);
+            this.tabClientes.Location = new System.Drawing.Point(4, 22);
+            this.tabClientes.Name = "tabClientes";
+            this.tabClientes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabClientes.Size = new System.Drawing.Size(896, 479);
+            this.tabClientes.TabIndex = 6;
+            this.tabClientes.Text = "Clientes";
+            this.tabClientes.UseVisualStyleBackColor = true;
+            // 
+            // grillaClientes
+            // 
+            this.grillaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaClientes.Location = new System.Drawing.Point(3, 59);
+            this.grillaClientes.Name = "grillaClientes";
+            this.grillaClientes.Size = new System.Drawing.Size(890, 309);
+            this.grillaClientes.TabIndex = 16;
+            // 
+            // btnEditarCliente
+            // 
+            this.btnEditarCliente.Location = new System.Drawing.Point(713, 386);
+            this.btnEditarCliente.Name = "btnEditarCliente";
+            this.btnEditarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarCliente.TabIndex = 15;
+            this.btnEditarCliente.Text = "Editar";
+            this.btnEditarCliente.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarCliente
+            // 
+            this.btnAgregarCliente.Location = new System.Drawing.Point(794, 386);
+            this.btnAgregarCliente.Name = "btnAgregarCliente";
+            this.btnAgregarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarCliente.TabIndex = 14;
+            this.btnAgregarCliente.Text = "Agregar";
+            this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarCliente
+            // 
+            this.btnEliminarCliente.Location = new System.Drawing.Point(632, 386);
+            this.btnEliminarCliente.Name = "btnEliminarCliente";
+            this.btnEliminarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarCliente.TabIndex = 13;
+            this.btnEliminarCliente.Text = "Eliminar";
+            this.btnEliminarCliente.UseVisualStyleBackColor = true;
+            // 
+            // tabProveedores
+            // 
+            this.tabProveedores.Controls.Add(this.lblErrorClickEditarProv);
+            this.tabProveedores.Controls.Add(this.grillaProveedores);
+            this.tabProveedores.Controls.Add(this.btnEditarProveedor);
+            this.tabProveedores.Controls.Add(this.btnAgregarProveedor);
+            this.tabProveedores.Controls.Add(this.btnEliminarProveedor);
+            this.tabProveedores.Location = new System.Drawing.Point(4, 22);
+            this.tabProveedores.Name = "tabProveedores";
+            this.tabProveedores.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProveedores.Size = new System.Drawing.Size(896, 479);
+            this.tabProveedores.TabIndex = 7;
+            this.tabProveedores.Text = "Proveedores";
+            this.tabProveedores.UseVisualStyleBackColor = true;
+            // 
+            // grillaProveedores
+            // 
+            this.grillaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaProveedores.Location = new System.Drawing.Point(3, 59);
+            this.grillaProveedores.Name = "grillaProveedores";
+            this.grillaProveedores.Size = new System.Drawing.Size(890, 309);
+            this.grillaProveedores.TabIndex = 17;
+            // 
+            // btnEditarProveedor
+            // 
+            this.btnEditarProveedor.Location = new System.Drawing.Point(713, 386);
+            this.btnEditarProveedor.Name = "btnEditarProveedor";
+            this.btnEditarProveedor.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarProveedor.TabIndex = 15;
+            this.btnEditarProveedor.Text = "Editar";
+            this.btnEditarProveedor.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarProveedor
+            // 
+            this.btnAgregarProveedor.Location = new System.Drawing.Point(794, 386);
+            this.btnAgregarProveedor.Name = "btnAgregarProveedor";
+            this.btnAgregarProveedor.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarProveedor.TabIndex = 14;
+            this.btnAgregarProveedor.Text = "Agregar";
+            this.btnAgregarProveedor.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarProveedor
+            // 
+            this.btnEliminarProveedor.Location = new System.Drawing.Point(632, 386);
+            this.btnEliminarProveedor.Name = "btnEliminarProveedor";
+            this.btnEliminarProveedor.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarProveedor.TabIndex = 13;
+            this.btnEliminarProveedor.Text = "Eliminar";
+            this.btnEliminarProveedor.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -647,6 +791,39 @@
             this.Disconnect.UseVisualStyleBackColor = true;
             this.Disconnect.Click += new System.EventHandler(this.Disconnect_Click);
             // 
+            // lblErrorClickEditarVenta
+            // 
+            this.lblErrorClickEditarVenta.AutoSize = true;
+            this.lblErrorClickEditarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorClickEditarVenta.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorClickEditarVenta.Location = new System.Drawing.Point(6, 371);
+            this.lblErrorClickEditarVenta.Name = "lblErrorClickEditarVenta";
+            this.lblErrorClickEditarVenta.Size = new System.Drawing.Size(247, 16);
+            this.lblErrorClickEditarVenta.TabIndex = 18;
+            this.lblErrorClickEditarVenta.Text = "Debe seleccionar un renglón para editar";
+            // 
+            // lblErrorClickEditarCliente
+            // 
+            this.lblErrorClickEditarCliente.AutoSize = true;
+            this.lblErrorClickEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorClickEditarCliente.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorClickEditarCliente.Location = new System.Drawing.Point(6, 371);
+            this.lblErrorClickEditarCliente.Name = "lblErrorClickEditarCliente";
+            this.lblErrorClickEditarCliente.Size = new System.Drawing.Size(247, 16);
+            this.lblErrorClickEditarCliente.TabIndex = 18;
+            this.lblErrorClickEditarCliente.Text = "Debe seleccionar un renglón para editar";
+            // 
+            // lblErrorClickEditarProv
+            // 
+            this.lblErrorClickEditarProv.AutoSize = true;
+            this.lblErrorClickEditarProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorClickEditarProv.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorClickEditarProv.Location = new System.Drawing.Point(6, 371);
+            this.lblErrorClickEditarProv.Name = "lblErrorClickEditarProv";
+            this.lblErrorClickEditarProv.Size = new System.Drawing.Size(247, 16);
+            this.lblErrorClickEditarProv.TabIndex = 18;
+            this.lblErrorClickEditarProv.Text = "Debe seleccionar un renglón para editar";
+            // 
             // Inicio2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -656,7 +833,7 @@
             this.Controls.Add(this.Disconnect);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.salir);
-            this.Controls.Add(this.tabVentas);
+            this.Controls.Add(this.tabGeneral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Inicio2";
             this.Text = "PetShop";
@@ -673,9 +850,16 @@
             this.tabPageProductos.ResumeLayout(false);
             this.tabPageProductos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaProductos)).EndInit();
+            this.tabGeneral.ResumeLayout(false);
             this.tabVentas.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
+            this.tabVentas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaVentas)).EndInit();
+            this.tabClientes.ResumeLayout(false);
+            this.tabClientes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaClientes)).EndInit();
+            this.tabProveedores.ResumeLayout(false);
+            this.tabProveedores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaProveedores)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagen_usuario)).EndInit();
@@ -710,8 +894,8 @@
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Button btnEliminarProducto;
         private System.Windows.Forms.DataGridView grillaProductos;
-        private System.Windows.Forms.TabControl tabVentas;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabControl tabGeneral;
+        private System.Windows.Forms.TabPage tabVentas;
         private System.Windows.Forms.Button btnAgregarVenta;
         private System.Windows.Forms.DataGridView grillaVentas;
         private System.Windows.Forms.Label lblSinPermisos;
@@ -736,5 +920,20 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox boxCategorias;
         private System.Windows.Forms.Button Disconnect;
+        private System.Windows.Forms.TabPage tabClientes;
+        private System.Windows.Forms.TabPage tabProveedores;
+        private System.Windows.Forms.Button btnEditarVenta;
+        private System.Windows.Forms.Button btnEliminarVenta;
+        private System.Windows.Forms.DataGridView grillaClientes;
+        private System.Windows.Forms.Button btnEditarCliente;
+        private System.Windows.Forms.Button btnAgregarCliente;
+        private System.Windows.Forms.Button btnEliminarCliente;
+        private System.Windows.Forms.DataGridView grillaProveedores;
+        private System.Windows.Forms.Button btnEditarProveedor;
+        private System.Windows.Forms.Button btnAgregarProveedor;
+        private System.Windows.Forms.Button btnEliminarProveedor;
+        private System.Windows.Forms.Label lblErrorClickEditarVenta;
+        private System.Windows.Forms.Label lblErrorClickEditarCliente;
+        private System.Windows.Forms.Label lblErrorClickEditarProv;
     }
 }

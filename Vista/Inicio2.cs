@@ -380,11 +380,6 @@ namespace TiendaMascota_v2.Vista
         }
         #endregion
 
-        private void salir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         #region Ventas
 
         private void InicializarGrillaVentas()
@@ -424,10 +419,29 @@ namespace TiendaMascota_v2.Vista
             this.Hide();
         }
 
+        private void btnEditarVenta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarVenta_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         #endregion
 
+        #region Cliente
+
+        #endregion
+
+        #region Proveedor
+
+        #endregion
+
+        #region Filtro y paginado
         private void InicializarComponentes()
         {
             Paginar(Productos_Completo);
@@ -645,11 +659,17 @@ namespace TiendaMascota_v2.Vista
             boxPaginacion.SelectedItem = "10";
         }
 
+        #endregion
+
         private void Disconnect_Click(object sender, EventArgs e)
         {
             Login login = new Login();
             this.Close();
             login.Show();
+        }
+        private void salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void InicializarNombreUsuario()
@@ -664,5 +684,7 @@ namespace TiendaMascota_v2.Vista
             // Conexion.Text = 
             // Conexion.show();
         }
+
+        
     }
 }
