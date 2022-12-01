@@ -47,6 +47,7 @@
             this.botonAtras.TabIndex = 41;
             this.botonAtras.Text = "Atrás";
             this.botonAtras.UseVisualStyleBackColor = true;
+            this.botonAtras.Click += new System.EventHandler(this.botonAtras_Click);
             // 
             // botonAceptar
             // 
@@ -56,6 +57,7 @@
             this.botonAceptar.TabIndex = 40;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
+            this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
             // 
             // comboActivo
             // 
@@ -135,6 +137,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AgregarProveedor";
             this.Text = "AgregarProveedor";
+            this.Load += new System.EventHandler(this.AgregarProveedor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

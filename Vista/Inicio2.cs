@@ -14,6 +14,9 @@ using TiendaMascota_v2.Vista.ABMAnimal;
 using TiendaMascota_v2.Vista.ABMCategoria;
 using TiendaMascota_v2.Vista.ABMProducto;
 using TiendaMascota_v2.Vista.ABMUsuario;
+using TiendaMascota_v2.Vista.AMBCliente;
+using TiendaMascota_v2.Vista.AMBEmpleado;
+using TiendaMascota_v2.Vista.AMBProveedor;
 
 namespace TiendaMascota_v2.Vista
 {
@@ -46,13 +49,20 @@ namespace TiendaMascota_v2.Vista
             InicializarGrillaCategorias();
             InicializarGrillaAnimales();
             InicializarGrillaVentas();
-            
+            //InicializarGrillaClientes();
+            //InicializarGrillaProveedores();
+            //InicializarGrillaEmpleados();
+
 
             this.lblErrorClickEditar.Visible = false;
             this.lblErrorClickEditarCat.Visible = false;
             this.lblErrorClickEditarAnimal.Visible = false;
             this.lblErrorClickEditarUsuario.Visible = false;
             this.lblSinPermisos.Visible = false;
+            this.lblErrorClickEditarVenta.Visible = false;
+            this.lblErrorClickEditarCliente.Visible = false;
+            this.lblErrorClickEditarProv.Visible = false;
+            this.lblErrorClickEditarEmp.Visible = false;
 
             if (InicioControlador.UsuarioLogueado.Admin)
             {
@@ -435,9 +445,199 @@ namespace TiendaMascota_v2.Vista
 
         #region Cliente
 
+        //private void InicializarGrillaClientes()
+        //{
+        //    DataTable tabla = new DataTable();
+        //    tabla.Columns.Add("Id");
+        //    tabla.Columns.Add("Nombre");
+        //    tabla.Columns.Add("Email");
+        //    tabla.Columns.Add("Domicilio");
+        //    tabla.Columns.Add("Activo");
+
+        //    grillaUsuarios.DataSource = tabla;
+
+        //    LlenarTablaClientes(tabla);
+        //}
+
+        //private void LlenarTablaClientes(DataTable tabla)
+        //{
+        //    foreach (var item in ClienteControlador.ObtenerClientes())
+        //    {
+        //        DataRow fila = tabla.NewRow();
+        //        fila["Id"] = item.Id;
+        //        fila["Nombre"] = item.Nombre;
+        //        fila["Email"] = item.Email;
+        //        fila["Domicilio"] = item.Domicilio;
+        //        fila["Activo"] = Cliente.EsActivo(item.Activo);
+
+        //        tabla.Rows.Add(fila);
+        //    }
+        //}
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            AgregarCliente vistaAgregarCliente = new AgregarCliente();
+            vistaAgregarCliente.Show();
+            this.Hide();
+        }
+
+        private void btnEditarCliente_Click(object sender, EventArgs e)
+        {
+            if (this.grillaClientes.SelectedRows.Count == 1)
+            {
+                var idSeleccionado = this.grillaClientes.SelectedRows[0].Cells[0].Value.ToString();
+
+                Cliente clienteSeleccionada = ClienteRepositorio.ObtenerClientePorId(int.Parse(idSeleccionado));
+
+                EditarCliente editarCliente = new EditarCliente(clienteSeleccionada);
+
+                editarCliente.Show();
+
+                this.Hide();
+
+            }
+            else
+            {
+                this.lblErrorClickEditarCliente.Visible = true;
+            }
+        }
+
+        private void btnEliminarCliente_Click(object sender, EventArgs e)
+        {
+            EliminarCliente vistaEliminarCliente = new EliminarCliente();
+            vistaEliminarCliente.Show();
+            this.Hide();
+        }
+
         #endregion
 
         #region Proveedor
+
+        //private void InicializarGrillaProveedores()
+        //{
+        //    DataTable tabla = new DataTable();
+        //    tabla.Columns.Add("Id");
+        //    tabla.Columns.Add("Nombre");
+        //    tabla.Columns.Add("Activo");
+
+
+        //    grillaUsuarios.DataSource = tabla;
+
+        //    LlenarTablaProveedores(tabla);
+        //}
+
+        //private void LlenarTablaProveedores(DataTable tabla)
+        //{
+        //    foreach (var item in ProveedorControlador.ObtenerProveedores())
+        //    {
+        //        DataRow fila = tabla.NewRow();
+        //        fila["Id"] = item.Id;
+        //        fila["Nombre"] = item.Nombre;
+        //        fila["Activo"] = Proveedor.EsActivo(item.Activo);
+
+        //        tabla.Rows.Add(fila);
+        //    }
+        //}
+
+        private void btnAgregarProveedor_Click(object sender, EventArgs e)
+        {
+            AgregarProveedor vistaAgregarProveedor = new AgregarProveedor();
+            vistaAgregarProveedor.Show();
+            this.Hide();
+        }
+
+        private void btnEliminarProveedor_Click(object sender, EventArgs e)
+        {
+            EliminarProveedor vistaEliminarProveedor = new EliminarProveedor();
+            vistaEliminarProveedor.Show();
+            this.Hide();
+        }
+
+        private void btnEditarProveedor_Click(object sender, EventArgs e)
+        {
+            if (this.grillaProveedor.SelectedRows.Count == 1)
+            {
+                var idSeleccionado = this.grillaProveedor.SelectedRows[0].Cells[0].Value.ToString();
+
+                Proveedor proveedorSeleccionado = ProveedorRepositorio.ObtenerProveedorPorId(int.Parse(idSeleccionado));
+
+                EditarProveedor editarProveedor = new EditarProveedor(proveedorSeleccionado);
+
+                editarProveedor.Show();
+
+                this.Hide();
+            }
+            else
+            {
+                this.lblErrorClickEditarProv.Visible = true;
+            }
+        }
+
+        #endregion
+
+        #region Empleados
+
+        //private void InicializarGrillaEmpleados()
+        //{
+        //    DataTable tabla = new DataTable();
+        //    tabla.Columns.Add("Id");
+        //    tabla.Columns.Add("Nombre");
+        //    tabla.Columns.Add("Apellido");
+        //    tabla.Columns.Add("Email");
+        //    tabla.Columns.Add("Activo");
+
+        //    grillaClientes.DataSource = tabla;
+
+        //    LlenarTablaEmpleados(tabla);
+        //}
+
+        //private void LlenarTablaEmpleados(DataTable tabla)
+        //{
+        //    foreach (var item in EmpleadoControlador.ObtenerEmpleados())
+        //    {
+        //        DataRow fila = tabla.NewRow();
+        //        fila["Id"] = item.Id;
+        //        fila["Nombre"] = item.Nombre;
+        //        fila["Apellido"] = item.Apellido;
+        //        fila["Email"] = item.Email;
+        //        fila["Activo"] = Empleado.EsActivo(item.Activo);
+
+        //        tabla.Rows.Add(fila);
+        //    }
+        //}
+
+        private void btnAgregarEmpleado_Click(object sender, EventArgs e)
+        {
+            AgregarEmpleado vistaAgregarEmpleado = new AgregarEmpleado();
+            vistaAgregarEmpleado.Show();
+            this.Hide();
+        }
+
+        private void btnEditarEmpleado_Click(object sender, EventArgs e)
+        {
+            if (this.grillaEmpleados.SelectedRows.Count == 1)
+            {
+                var idSeleccionado = this.grillaEmpleados.SelectedRows[0].Cells[0].Value.ToString();
+
+                Empleado EmpleadoSeleccionado = EmpleadoRepositorio.ObtenerEmpleadoPorId(int.Parse(idSeleccionado));
+
+                EditarEmpleado editarEmpleado = new EditarEmpleado(EmpleadoSeleccionado);
+
+                editarEmpleado.Show();
+
+                this.Hide();
+            }
+            else
+            {
+                this.lblErrorClickEditarEmp.Visible = true;
+            }
+        }
+
+        private void btnEliminarEmpleado_Click(object sender, EventArgs e)
+        {
+            EliminarEmpleado vistaEliminarEmpleado = new EliminarEmpleado();
+            vistaEliminarEmpleado.Show();
+            this.Hide();
+        }
 
         #endregion
 
@@ -685,6 +885,6 @@ namespace TiendaMascota_v2.Vista
             // Conexion.show();
         }
 
-        
+
     }
 }

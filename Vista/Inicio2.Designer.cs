@@ -71,20 +71,24 @@
             this.grillaProductos = new System.Windows.Forms.DataGridView();
             this.tabGeneral = new System.Windows.Forms.TabControl();
             this.tabVentas = new System.Windows.Forms.TabPage();
+            this.lblErrorClickEditarVenta = new System.Windows.Forms.Label();
             this.btnEditarVenta = new System.Windows.Forms.Button();
             this.btnEliminarVenta = new System.Windows.Forms.Button();
             this.btnAgregarVenta = new System.Windows.Forms.Button();
             this.grillaVentas = new System.Windows.Forms.DataGridView();
             this.tabClientes = new System.Windows.Forms.TabPage();
+            this.lblErrorClickEditarCliente = new System.Windows.Forms.Label();
             this.grillaClientes = new System.Windows.Forms.DataGridView();
             this.btnEditarCliente = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnEliminarCliente = new System.Windows.Forms.Button();
             this.tabProveedores = new System.Windows.Forms.TabPage();
-            this.grillaProveedores = new System.Windows.Forms.DataGridView();
+            this.lblErrorClickEditarProv = new System.Windows.Forms.Label();
+            this.grillaProveedor = new System.Windows.Forms.DataGridView();
             this.btnEditarProveedor = new System.Windows.Forms.Button();
             this.btnAgregarProveedor = new System.Windows.Forms.Button();
             this.btnEliminarProveedor = new System.Windows.Forms.Button();
+            this.tabEmpleado = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Conexion = new System.Windows.Forms.Label();
             this.imagen_usuario = new System.Windows.Forms.PictureBox();
@@ -92,9 +96,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Petshop = new System.Windows.Forms.Label();
             this.Disconnect = new System.Windows.Forms.Button();
-            this.lblErrorClickEditarVenta = new System.Windows.Forms.Label();
-            this.lblErrorClickEditarCliente = new System.Windows.Forms.Label();
-            this.lblErrorClickEditarProv = new System.Windows.Forms.Label();
+            this.lblErrorClickEditarEmp = new System.Windows.Forms.Label();
+            this.grillaEmpleados = new System.Windows.Forms.DataGridView();
+            this.btnEditarEmpleado = new System.Windows.Forms.Button();
+            this.btnAgregarEmpleado = new System.Windows.Forms.Button();
+            this.btnEliminarEmpleado = new System.Windows.Forms.Button();
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaUsuarios)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -109,10 +115,12 @@
             this.tabClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaClientes)).BeginInit();
             this.tabProveedores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaProveedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaProveedor)).BeginInit();
+            this.tabEmpleado.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagen_usuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // salir
@@ -558,6 +566,7 @@
             this.tabGeneral.Controls.Add(this.tabVentas);
             this.tabGeneral.Controls.Add(this.tabClientes);
             this.tabGeneral.Controls.Add(this.tabProveedores);
+            this.tabGeneral.Controls.Add(this.tabEmpleado);
             this.tabGeneral.Location = new System.Drawing.Point(76, 117);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.SelectedIndex = 0;
@@ -578,6 +587,17 @@
             this.tabVentas.TabIndex = 5;
             this.tabVentas.Text = "Ventas";
             this.tabVentas.UseVisualStyleBackColor = true;
+            // 
+            // lblErrorClickEditarVenta
+            // 
+            this.lblErrorClickEditarVenta.AutoSize = true;
+            this.lblErrorClickEditarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorClickEditarVenta.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorClickEditarVenta.Location = new System.Drawing.Point(6, 371);
+            this.lblErrorClickEditarVenta.Name = "lblErrorClickEditarVenta";
+            this.lblErrorClickEditarVenta.Size = new System.Drawing.Size(247, 16);
+            this.lblErrorClickEditarVenta.TabIndex = 18;
+            this.lblErrorClickEditarVenta.Text = "Debe seleccionar un renglón para editar";
             // 
             // btnEditarVenta
             // 
@@ -632,6 +652,17 @@
             this.tabClientes.Text = "Clientes";
             this.tabClientes.UseVisualStyleBackColor = true;
             // 
+            // lblErrorClickEditarCliente
+            // 
+            this.lblErrorClickEditarCliente.AutoSize = true;
+            this.lblErrorClickEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorClickEditarCliente.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorClickEditarCliente.Location = new System.Drawing.Point(6, 371);
+            this.lblErrorClickEditarCliente.Name = "lblErrorClickEditarCliente";
+            this.lblErrorClickEditarCliente.Size = new System.Drawing.Size(247, 16);
+            this.lblErrorClickEditarCliente.TabIndex = 18;
+            this.lblErrorClickEditarCliente.Text = "Debe seleccionar un renglón para editar";
+            // 
             // grillaClientes
             // 
             this.grillaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -648,6 +679,7 @@
             this.btnEditarCliente.TabIndex = 15;
             this.btnEditarCliente.Text = "Editar";
             this.btnEditarCliente.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
             // 
             // btnAgregarCliente
             // 
@@ -657,6 +689,7 @@
             this.btnAgregarCliente.TabIndex = 14;
             this.btnAgregarCliente.Text = "Agregar";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
             // btnEliminarCliente
             // 
@@ -666,11 +699,12 @@
             this.btnEliminarCliente.TabIndex = 13;
             this.btnEliminarCliente.Text = "Eliminar";
             this.btnEliminarCliente.UseVisualStyleBackColor = true;
+            this.btnEliminarCliente.Click += new System.EventHandler(this.btnEliminarCliente_Click);
             // 
             // tabProveedores
             // 
             this.tabProveedores.Controls.Add(this.lblErrorClickEditarProv);
-            this.tabProveedores.Controls.Add(this.grillaProveedores);
+            this.tabProveedores.Controls.Add(this.grillaProveedor);
             this.tabProveedores.Controls.Add(this.btnEditarProveedor);
             this.tabProveedores.Controls.Add(this.btnAgregarProveedor);
             this.tabProveedores.Controls.Add(this.btnEliminarProveedor);
@@ -682,13 +716,24 @@
             this.tabProveedores.Text = "Proveedores";
             this.tabProveedores.UseVisualStyleBackColor = true;
             // 
-            // grillaProveedores
+            // lblErrorClickEditarProv
             // 
-            this.grillaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaProveedores.Location = new System.Drawing.Point(3, 59);
-            this.grillaProveedores.Name = "grillaProveedores";
-            this.grillaProveedores.Size = new System.Drawing.Size(890, 309);
-            this.grillaProveedores.TabIndex = 17;
+            this.lblErrorClickEditarProv.AutoSize = true;
+            this.lblErrorClickEditarProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorClickEditarProv.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorClickEditarProv.Location = new System.Drawing.Point(6, 371);
+            this.lblErrorClickEditarProv.Name = "lblErrorClickEditarProv";
+            this.lblErrorClickEditarProv.Size = new System.Drawing.Size(247, 16);
+            this.lblErrorClickEditarProv.TabIndex = 18;
+            this.lblErrorClickEditarProv.Text = "Debe seleccionar un renglón para editar";
+            // 
+            // grillaProveedor
+            // 
+            this.grillaProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaProveedor.Location = new System.Drawing.Point(3, 59);
+            this.grillaProveedor.Name = "grillaProveedor";
+            this.grillaProveedor.Size = new System.Drawing.Size(890, 309);
+            this.grillaProveedor.TabIndex = 17;
             // 
             // btnEditarProveedor
             // 
@@ -698,6 +743,7 @@
             this.btnEditarProveedor.TabIndex = 15;
             this.btnEditarProveedor.Text = "Editar";
             this.btnEditarProveedor.UseVisualStyleBackColor = true;
+            this.btnEditarProveedor.Click += new System.EventHandler(this.btnEditarProveedor_Click);
             // 
             // btnAgregarProveedor
             // 
@@ -707,6 +753,7 @@
             this.btnAgregarProveedor.TabIndex = 14;
             this.btnAgregarProveedor.Text = "Agregar";
             this.btnAgregarProveedor.UseVisualStyleBackColor = true;
+            this.btnAgregarProveedor.Click += new System.EventHandler(this.btnAgregarProveedor_Click);
             // 
             // btnEliminarProveedor
             // 
@@ -716,6 +763,23 @@
             this.btnEliminarProveedor.TabIndex = 13;
             this.btnEliminarProveedor.Text = "Eliminar";
             this.btnEliminarProveedor.UseVisualStyleBackColor = true;
+            this.btnEliminarProveedor.Click += new System.EventHandler(this.btnEliminarProveedor_Click);
+            // 
+            // tabEmpleado
+            // 
+            this.tabEmpleado.AutoScroll = true;
+            this.tabEmpleado.Controls.Add(this.lblErrorClickEditarEmp);
+            this.tabEmpleado.Controls.Add(this.grillaEmpleados);
+            this.tabEmpleado.Controls.Add(this.btnEditarEmpleado);
+            this.tabEmpleado.Controls.Add(this.btnAgregarEmpleado);
+            this.tabEmpleado.Controls.Add(this.btnEliminarEmpleado);
+            this.tabEmpleado.Location = new System.Drawing.Point(4, 22);
+            this.tabEmpleado.Name = "tabEmpleado";
+            this.tabEmpleado.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEmpleado.Size = new System.Drawing.Size(896, 479);
+            this.tabEmpleado.TabIndex = 8;
+            this.tabEmpleado.Text = "Empleados";
+            this.tabEmpleado.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -791,38 +855,54 @@
             this.Disconnect.UseVisualStyleBackColor = true;
             this.Disconnect.Click += new System.EventHandler(this.Disconnect_Click);
             // 
-            // lblErrorClickEditarVenta
+            // lblErrorClickEditarEmp
             // 
-            this.lblErrorClickEditarVenta.AutoSize = true;
-            this.lblErrorClickEditarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorClickEditarVenta.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorClickEditarVenta.Location = new System.Drawing.Point(6, 371);
-            this.lblErrorClickEditarVenta.Name = "lblErrorClickEditarVenta";
-            this.lblErrorClickEditarVenta.Size = new System.Drawing.Size(247, 16);
-            this.lblErrorClickEditarVenta.TabIndex = 18;
-            this.lblErrorClickEditarVenta.Text = "Debe seleccionar un renglón para editar";
+            this.lblErrorClickEditarEmp.AutoSize = true;
+            this.lblErrorClickEditarEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorClickEditarEmp.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorClickEditarEmp.Location = new System.Drawing.Point(6, 371);
+            this.lblErrorClickEditarEmp.Name = "lblErrorClickEditarEmp";
+            this.lblErrorClickEditarEmp.Size = new System.Drawing.Size(247, 16);
+            this.lblErrorClickEditarEmp.TabIndex = 23;
+            this.lblErrorClickEditarEmp.Text = "Debe seleccionar un renglón para editar";
             // 
-            // lblErrorClickEditarCliente
+            // grillaEmpleados
             // 
-            this.lblErrorClickEditarCliente.AutoSize = true;
-            this.lblErrorClickEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorClickEditarCliente.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorClickEditarCliente.Location = new System.Drawing.Point(6, 371);
-            this.lblErrorClickEditarCliente.Name = "lblErrorClickEditarCliente";
-            this.lblErrorClickEditarCliente.Size = new System.Drawing.Size(247, 16);
-            this.lblErrorClickEditarCliente.TabIndex = 18;
-            this.lblErrorClickEditarCliente.Text = "Debe seleccionar un renglón para editar";
+            this.grillaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaEmpleados.Location = new System.Drawing.Point(3, 59);
+            this.grillaEmpleados.Name = "grillaEmpleados";
+            this.grillaEmpleados.Size = new System.Drawing.Size(890, 309);
+            this.grillaEmpleados.TabIndex = 22;
             // 
-            // lblErrorClickEditarProv
+            // btnEditarEmpleado
             // 
-            this.lblErrorClickEditarProv.AutoSize = true;
-            this.lblErrorClickEditarProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorClickEditarProv.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorClickEditarProv.Location = new System.Drawing.Point(6, 371);
-            this.lblErrorClickEditarProv.Name = "lblErrorClickEditarProv";
-            this.lblErrorClickEditarProv.Size = new System.Drawing.Size(247, 16);
-            this.lblErrorClickEditarProv.TabIndex = 18;
-            this.lblErrorClickEditarProv.Text = "Debe seleccionar un renglón para editar";
+            this.btnEditarEmpleado.Location = new System.Drawing.Point(713, 386);
+            this.btnEditarEmpleado.Name = "btnEditarEmpleado";
+            this.btnEditarEmpleado.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarEmpleado.TabIndex = 21;
+            this.btnEditarEmpleado.Text = "Editar";
+            this.btnEditarEmpleado.UseVisualStyleBackColor = true;
+            this.btnEditarEmpleado.Click += new System.EventHandler(this.btnEditarEmpleado_Click);
+            // 
+            // btnAgregarEmpleado
+            // 
+            this.btnAgregarEmpleado.Location = new System.Drawing.Point(794, 386);
+            this.btnAgregarEmpleado.Name = "btnAgregarEmpleado";
+            this.btnAgregarEmpleado.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarEmpleado.TabIndex = 20;
+            this.btnAgregarEmpleado.Text = "Agregar";
+            this.btnAgregarEmpleado.UseVisualStyleBackColor = true;
+            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
+            // 
+            // btnEliminarEmpleado
+            // 
+            this.btnEliminarEmpleado.Location = new System.Drawing.Point(632, 386);
+            this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
+            this.btnEliminarEmpleado.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarEmpleado.TabIndex = 19;
+            this.btnEliminarEmpleado.Text = "Eliminar";
+            this.btnEliminarEmpleado.UseVisualStyleBackColor = true;
+            this.btnEliminarEmpleado.Click += new System.EventHandler(this.btnEliminarEmpleado_Click);
             // 
             // Inicio2
             // 
@@ -859,11 +939,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.grillaClientes)).EndInit();
             this.tabProveedores.ResumeLayout(false);
             this.tabProveedores.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaProveedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaProveedor)).EndInit();
+            this.tabEmpleado.ResumeLayout(false);
+            this.tabEmpleado.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagen_usuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaEmpleados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -928,12 +1011,18 @@
         private System.Windows.Forms.Button btnEditarCliente;
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.Button btnEliminarCliente;
-        private System.Windows.Forms.DataGridView grillaProveedores;
+        private System.Windows.Forms.DataGridView grillaProveedor;
         private System.Windows.Forms.Button btnEditarProveedor;
         private System.Windows.Forms.Button btnAgregarProveedor;
         private System.Windows.Forms.Button btnEliminarProveedor;
         private System.Windows.Forms.Label lblErrorClickEditarVenta;
         private System.Windows.Forms.Label lblErrorClickEditarCliente;
         private System.Windows.Forms.Label lblErrorClickEditarProv;
+        private System.Windows.Forms.TabPage tabEmpleado;
+        private System.Windows.Forms.Label lblErrorClickEditarEmp;
+        private System.Windows.Forms.DataGridView grillaEmpleados;
+        private System.Windows.Forms.Button btnEditarEmpleado;
+        private System.Windows.Forms.Button btnAgregarEmpleado;
+        private System.Windows.Forms.Button btnEliminarEmpleado;
     }
 }
